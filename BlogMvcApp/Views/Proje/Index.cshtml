@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BlogMvcApp.Models.Proje>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Proje Listesi</h2>
+<hr />
+<p>
+    @Html.ActionLink("Proje Ekle", "Create", null, new {@class="btn btn-primary"})
+</p>
+<hr />
+
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeOzet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeGorsel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeTarihi)
+        </th>
+        <th style="width:150px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeOzet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeGorsel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }, new { @class = "btn btn-warning btn-xs" }) 
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id }, new { @class = "btn btn-danger btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>

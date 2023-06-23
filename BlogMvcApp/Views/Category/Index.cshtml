@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BlogMvcApp.Models.CategoryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kategori Listesi</h2>
+<hr />
+
+@if (TempData["Kategori"] != null)
+{
+    var kategori = (BlogMvcApp.Models.Category)TempData["Kategori"];
+
+    <div class="alert alert-success" role="alert">
+        <strong> @kategori.KategoriAdi </strong> kayıt edildi.
+    </div>
+
+}
+
+
+
+<p>
+    @Html.ActionLink("Kategori ekle", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<hr />
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlogSayisi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.KategoriAdi
+            </td>
+            <td>
+                @item.BlogSayisi
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

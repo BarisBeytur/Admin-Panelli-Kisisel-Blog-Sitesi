@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet" href="~/AdminPanelTemplate/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="contact-form">
+            <img src="~/AdminPanelTemplate/img/—Pngtree—user login or authenticate icon_5089976.png" class="admin-img">
+            <h2>Admin Login</h2>
+
+
+            @using (Html.BeginForm("Index", "Admin", FormMethod.Post))
+            {
+                <div class=txtb>
+                    <input type="text" name="KullaniciAdi" placeholder="Username">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="Sifre" placeholder="Password">
+                </div>
+                <input type="submit" class="logbtn" value="Login">
+            }
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Blog Uygulaması</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark" style="height:70px">
+        <div class="container">
+
+            <a href="/Home/Index" style="font-family: 'Sacramento', cursive; font-size:35px; text-decoration:none; margin-right:20px; margin-top:2px; color: white; font-weight:bold;">Barış Beytur</a>
+
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Bloglar", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Projeler", "ProjelerHome", "Proje", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Hakkımda", "Index", "Hakkimda", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container body-content">
+
+        <div class="row">
+
+
+
+            @if (IsSectionDefined("SagKolon"))
+            {
+                <div class="row">
+                    <div class="col-12">
+                        <div id="carouselExampleCaptions" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/AdminPanelTemplate/img/pcmuharkaplan.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5><b>BLOĞUMA HOŞ GELDİNİZ!</b></h5>
+                                        <p>Hem eğlenip hem öğrenebildiğiniz keyifli bir blog olması dileğiyle. İyi okumalar...</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/AdminPanelTemplate/png-transparent-background-dark-background-starry-background-dark-colors.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5><b>HAKKIMDA & İLETİŞİM</b></h5>
+                                        <p>Projeler kısmından yaptığım projelere göz atabilir, hakkımda kısmından eğitim ve iletişim bilgilerime ulaşabilir ve benimle iletişime geçebilirsiniz.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/AdminPanelTemplate/png-transparent-background-dark-background-starry-background-dark-colors.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5><b>.NET MVC</b></h5>
+                                        <p>ASP.NET Core MVC, Model-View-Controller tasarım desenini kullanarak web uygulamaları ve API'ler oluşturmaya yönelik zengin bir çerçevedir. Bu site MVC ile geliştirilmiştir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        @RenderBody()
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        @RenderSection("SagKolon")
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="col-md-12">
+                    @RenderBody()
+                </div>
+            }
+
+        </div>
+        <hr />
+
+    </div>
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    
+
+        <footer class="bg-dark text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" style="border-radius:150px" href="#!" role="button">
+                        <i class="bi-facebook"></i>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" style="border-radius:150px" href="#!" role="button">
+                        <i class="bi-twitter"></i>
+                    </a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" style="border-radius:150px" href="mailto:beyturbaris@gmail.com" role="button">
+                        <i class="bi-envelope"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" style="border-radius:150px" href="#!" role="button">
+                        <i class="bi-instagram"></i>
+                    </a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" style="border-radius:150px" href="https://www.linkedin.com/in/barisbeytur/" role="button">
+                        <i class="bi-linkedin"></i>
+                    </a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" style="border-radius:150px" href="https://github.com/BarisBeytur" role="button">
+                        <i class="bi-github"></i>
+                    </a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © @DateTime.Now.Year Copyright:
+                <a class="text-white" target="_blank" href="https://www.linkedin.com/in/barisbeytur/">Barış Beytur</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+   
+    <!-- End of .container -->
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

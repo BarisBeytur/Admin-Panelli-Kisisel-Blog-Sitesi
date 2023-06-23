@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BlogMvcApp.Models.BlogModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+    <br />
+    <h1 style="font-family: 'Pacifico', cursive; font-size:50px; margin-bottom:20px;">Bloglar</h1>
+    <hr />
+
+
+    @Html.Partial("BlogListesi", Model)
+
+
+    <hr />
+    @section SagKolon{
+        <br />
+        @Html.Partial("Search")
+        @{ Html.RenderAction("KategoriListesi", "Category");}
+    }
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

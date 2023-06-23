@@ -1,0 +1,65 @@
+﻿@model BlogMvcApp.Models.Proje
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Proje Ekle</h2>
+<hr />
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProjeAd,new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ProjeAd, new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.ProjeAd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProjeOzet,new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ProjeOzet,new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.ProjeOzet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProjeAciklama, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ProjeAciklama,new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.ProjeAciklama, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProjeGorsel,new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ProjeGorsel,new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.ProjeGorsel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<hr />
+<div>
+    @Html.ActionLink("Listeye Dön", "Index", null, new { @class = "btn btn-warning" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

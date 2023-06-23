@@ -1,0 +1,89 @@
+﻿@model BlogMvcApp.Models.Blog
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Silmek istediğine emin misin?</h3>
+
+<hr />
+<div>
+  
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EklenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EklenmeTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Onay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Onay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anasayfa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anasayfa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <hr />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

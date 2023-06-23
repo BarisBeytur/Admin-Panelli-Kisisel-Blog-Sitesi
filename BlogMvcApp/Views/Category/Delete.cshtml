@@ -1,0 +1,32 @@
+﻿@model BlogMvcApp.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Silmek istediğine emin misin?</h3>
+<hr />
+<div>
+  
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <hr />
+            @Html.ActionLink("Listeye Dön", "Index", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

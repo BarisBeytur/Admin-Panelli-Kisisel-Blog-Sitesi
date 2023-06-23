@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BlogMvcApp.Models.Category> 
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>KategoriListesi</title>
+</head>
+
+<body>
+
+
+    
+
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active disabled">
+            Kategoriler
+        </button>
+        @foreach (var item in Model) {
+        <a class="link-underline link-underline-opacity-0" href="/Blog/List/@item.Id">
+            <button type="button" class="list-group-item list-group-item-action">@item.KategoriAdi</button>
+        </a>
+        }
+    </div>
+
+
+
+
+
+</body>
+</html>

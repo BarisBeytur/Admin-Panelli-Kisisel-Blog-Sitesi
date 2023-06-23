@@ -1,0 +1,91 @@
+﻿@model BlogMvcApp.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
+<br />
+<br />
+
+<h1>@Model.Baslik</h1>
+<hr />
+<p>
+    <span class="bi-clock"></span>
+    @Model.EklenmeTarihi
+</p>
+<hr />
+<img class="img-responsive" src="http://placehold.it/800x300" alt="Alternate Text" />
+<hr />
+
+<blockquote style=" background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  ">
+    <p>@Model.Aciklama</p>
+</blockquote>
+<p>
+    @Model.Icerik
+</p>
+
+<hr />
+<br />
+<div class="comment">
+    <div style="padding: 12px; background-color: #e2e2e2" class="card">
+        <h4>Yorum Yap :</h4>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+
+    <br />
+    <hr />
+
+    <br />
+    <div class="media">
+        <img class="mr-3" src="http://placehold.it/64x64" alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+    </div>
+    <div class="media">
+        <img class="mr-3" src="http://placehold.it/64x64" alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+    </div>
+    <div class="media">
+        <img class="mr-3" src="http://placehold.it/64x64" alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+    </div>
+
+</div>
+
+<br />
+
+
+
+@section SagKolon
+{
+    <br />
+    <br />
+    @{ Html.RenderAction("KategoriListesi", "Category");}
+}
+
+
+
+
+
+

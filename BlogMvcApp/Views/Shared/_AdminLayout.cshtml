@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(../../AdminPanelTemplate/img/pcmuharkaplan.jpg)
+        }
+        .anapanel {
+            width: 25%;
+            border-radius: 50px;
+            height: 80%;
+            margin-top: 80px;
+            background-color: #eee9e9
+        }
+        a {
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom:5px;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    
+
+    <!-- Page Content -->
+    <div style="width:25%; margin-left:auto; margin-right:auto;">
+
+        <div class="w3-sidebar w3-bar-block anapanel">
+            <h3 class="w3-bar-item mt-5" style="font-family: 'Dancing Script', cursive; font-family: 'Pacifico', cursive; text-align: center; font-size: 30px;"> <label style="font-size:50px; margin-bottom:25px" class="bi bi-person bg-black"></label> <br /> Admin Panel</h3>
+            <hr />
+ 
+                <a href="#" class="w3-bar w3-button btn-warning">Anasayfa</a>
+                <a href="/Blog/Index" target="_blank" class="w3-bar w3-button btn-secondary">Bloglar</a>
+                <a href="/Category/Index" target="_blank" class="w3-bar w3-button btn-secondary">Kategoriler</a>
+                <a href="/Proje/Index" target="_blank" class="w3-bar w3-button btn-secondary">Projeler</a>
+                <a href="/Home/Index" target="_blank" class="w3-bar w3-button btn-info">Siteye Git</a>
+                <a href="/Admin/LogOut" class="w3-bar w3-button btn-danger">Çıkış Yap</a>
+
+        </div>
+
+
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</body>
+</html>

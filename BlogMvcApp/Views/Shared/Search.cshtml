@@ -1,0 +1,29 @@
+﻿
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    @using (Html.BeginForm("List", "Blog", FormMethod.Get))
+    {
+        
+      
+        <br />
+        <div style="margin-top:30px" class="input-group">
+            <input style="margin-right:5px; margin-bottom:15px" class="form-control border-end-0 border rounded-pill" type="text" placeholder="Ara" id="example-search-input" name="q">
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    }
+</body>
+</html>
+
+
+
+
