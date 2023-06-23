@@ -1,4 +1,4 @@
-# Admin panelli kişisel blog sitesi projesi
+# Admin panelli kişisel blog sitesi
 
 ASP.NET MVC ile yazılmış admin panelli kişisel blog sitesi projesidir.
 
